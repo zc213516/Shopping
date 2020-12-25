@@ -75,4 +75,9 @@ dependencies {
 
     //质感设计的依赖:RecyclerView,NavigationView,CardView,协调布局,AppBarLayout....Tablayout
     implementation 'com.google.android.material:material:1.2.0-alpha02'
+
+    //vlayout
+    implementation ('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
 }
