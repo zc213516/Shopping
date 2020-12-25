@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_one"
+        android:icon="@drawable/home_selector"
+        android:title="首页" />
+    <item
+        android:id="@+id/item_two"
+        android:icon="@drawable/special_selector"
+        android:title="专题" />
+    <item
+        android:id="@+id/item_three"
+        android:icon="@drawable/sort_selector"
+        android:title="分类" />
+    <item
+        android:id="@+id/item_four"
+        android:icon="@drawable/shop_selector"
+        android:title="购物车" />
+    <item
+        android:id="@+id/item_five"
+        android:icon="@drawable/me"
+        android:title="我的" />
+</menu>
