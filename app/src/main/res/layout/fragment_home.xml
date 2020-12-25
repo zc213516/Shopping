@@ -15,12 +15,6 @@
             android:src="@drawable/ic_search"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <EditTextm
-            android:textSize="20sp"
-            android:gravity="center"
-            android:hint="商品搜索，共239款好物"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
@@ -28,7 +22,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="300dp"/>
 
 
     <LinearLayout
@@ -120,6 +114,9 @@
 
         </LinearLayout>
     </LinearLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rv2"
+        android:layout_height="300dp"/>
 
 </LinearLayout>

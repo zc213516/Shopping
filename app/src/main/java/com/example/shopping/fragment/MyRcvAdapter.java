@@ -1,4 +1,4 @@
-package com.example.shopping.adapter;
+package com.example.shopping.fragment;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,11 +16,12 @@ import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 
-public class BannerAdapter extends RecyclerView.Adapter {
+public class MyRcvAdapter extends RecyclerView.Adapter {
     private ArrayList<Integer> list;
     private Context context;
+    private Banner ban;
 
-    public BannerAdapter(ArrayList<Integer> list, Context context) {
+    public MyRcvAdapter(ArrayList<Integer> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -28,20 +29,19 @@ public class BannerAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_banner, parent, false);
-        return new BannerHolder(view);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.layout_banner, parent, false);
+        return new MyHoler1(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        BannerHolder bannerHolder= (BannerHolder) holder;
-        bannerHolder.banner.setImages(list).setImageLoader(new ImageLoader() {
+        MyHoler1 myHoler1= (MyHoler1) holder;
+        myHoler1.ban.setImages(list).setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
-                Glide.with(context).load(list).into(imageView);
+                Glide.with(context).load(path).into(imageView);
             }
-        });
-        bannerHolder.banner.start();
+        }).start();
     }
 
     @Override
@@ -49,11 +49,11 @@ public class BannerAdapter extends RecyclerView.Adapter {
         return list.size();
     }
 
-    class BannerHolder extends RecyclerView.ViewHolder {
-        private Banner banner;
-        public BannerHolder(@NonNull View itemView) {
+    public static class MyHoler1 extends RecyclerView.ViewHolder {
+        private final Banner ban;
+        public MyHoler1(@NonNull View itemView) {
             super(itemView);
-             banner = itemView.findViewById(R.id.banner);
+            ban = itemView.findViewById(R.id.banner);
         }
     }
 }
