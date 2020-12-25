@@ -11,10 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.example.shopping.R;
-import com.example.shopping.adapter.Rv2MainGridLayoutAdapter;
+import com.example.shopping.adapter.Rv2HomeGridLayoutAdapter;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,7 @@ public class HomeFragment extends Fragment {
     private MyRcvAdapter myRcvAdapter;
     private RecyclerView rv1;
     private RecyclerView rv2;
+    private DelegateAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,6 +79,12 @@ public class HomeFragment extends Fragment {
         gridLayoutHelper.setSpanCount(5);
 
         //创建适配器并设置
-        Rv2MainGridLayoutAdapter rv2MainGridLayoutAdapter = new Rv2MainGridLayoutAdapter(gridLayoutHelper, this);
+        Rv2HomeGridLayoutAdapter rv2HomeGridLayoutAdapter = new Rv2HomeGridLayoutAdapter(gridLayoutHelper, getActivity());
+
+
+        adapter = new DelegateAdapter(virtualLayoutManager, true);
+        adapter.addAdapter(rv2HomeGridLayoutAdapter);
+        rv2.setLayoutManager(virtualLayoutManager);
+        rv2.setAdapter(adapter);
     }
 }
