@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.shopping.bean.ShopBean;
+import com.example.shopping.contract.HomeContract;
 import com.example.shopping.fragment.HomeFragment;
 import com.example.shopping.fragment.MeFragment;
 import com.example.shopping.fragment.ShopFragment;
@@ -21,7 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.security.PrivateKey;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private Fragment mCurrentFragment = null;
     private FrameLayout frame;
