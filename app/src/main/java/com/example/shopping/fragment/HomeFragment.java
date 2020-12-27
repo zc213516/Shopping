@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
         //是否自动填充空白区域
         gridLayoutHelper.setAutoExpand(false);
         // 设置每行多少个网格
-        gridLayoutHelper.setSpanCount(5);
+        gridLayoutHelper.setSpanCount(2);
 
         //创建适配器并设置
         Rv2HomeGridLayoutAdapter rv2HomeGridLayoutAdapter = new Rv2HomeGridLayoutAdapter(gridLayoutHelper, getActivity());
